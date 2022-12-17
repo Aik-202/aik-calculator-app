@@ -5,7 +5,7 @@ body{
 h1,p{
     margin: 0;
     padding: 0;
-    color: hsl(0, 0, 100%);
+    color: hsl(0, 0%, 100%);
 }
 main{
     display: flex;
@@ -25,25 +25,28 @@ main{
     justify-content: space-between;
 }
 .cont1>h1{
-    color: hsl(0, 0, 100%);
+    color: hsl(0, 0%, 100%);
     font-size: 25px;
 }
 .theme{
     display: flex;
     flex-direction: row;
+    align-self: flex-end;
+    max-width: 50%;
 }
 .theme>p {
     margin: 10px;
-    color: hsl(0, 0, 100%);
+    color: hsl(0, 0%, 100%);
     font-size: 12px;
 }
 .slider{
     -webkit-appearance: none;
     width: 100%;
     height: 25px;
+    padding: 2px 5px;
     border-radius: 50px;
     outline: none;
-    background: peru;
+    background: hsl(223, 31%, 20%);
 }
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -51,14 +54,14 @@ main{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: green;
+    background: hsl(6, 63%, 50%);
     cursor: pointer;
 }
 .slider::-moz-range-thumb {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: green;
+    background: hsl(6, 63%, 50%);
     cursor: pointer;
 }
 textarea{
@@ -71,21 +74,26 @@ textarea{
     border-color: hsl(224, 36%, 15%);
 }
 .cont2{
+    display: flex;
+    flex-direction: column;
     background-color: hsl(223, 31%, 20%);
     border-radius: 5px;
     padding: 10px;
 }
 .row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 70px 70px 70px 70px;
 }
 .row>button {
     padding: 10px 20px;
     margin: 5px 5px;
 }
+.row2{
+    display: grid;
+    grid-template-columns: 140px 140px;
+}
 .row2>button {
-    padding: 10px 40px;
+    padding: 10px 20px;
     margin: 5px 5px;
 }
 .attribution { font-size: 11px; text-align: center; }
