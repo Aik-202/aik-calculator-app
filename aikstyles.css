@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 body{
     box-sizing: border-box;
     margin: 0;
@@ -6,6 +7,7 @@ h1,p{
     margin: 0;
     padding: 0;
     color: hsl(0, 0%, 100%);
+    font-family: 'League Spartan';
 }
 main{
     display: flex;
@@ -31,7 +33,7 @@ main{
 .theme{
     display: flex;
     flex-direction: row;
-    max-width: 50%;
+    max-width: 45%;
 }
 .theme>p {
     margin: 10px;
@@ -42,20 +44,23 @@ main{
 .theme>div{
     display: flex;
     flex-direction: column;
-    margin-top: 0;
+    margin-left: 10px;
 }
 .theme>div>div{
     display: flex;
     flex-direction: row;
+    width: 80%;
     justify-content: space-between;
-    margin-top: -20px;
+    margin-top: -12px;
     padding: 0 8px;
     color: hsl(0, 0%, 100%);
+    font-family: 'League Spartan';
+    font-size: 12px;
 }
 .slider{
     -webkit-appearance: none;
-    width: 85%;
-    height: 25px;
+    width: 80%;
+    height: 18px;
     padding: 2px 5px;
     border-radius: 50px;
     outline: none;
@@ -64,15 +69,15 @@ main{
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background: hsl(6, 63%, 50%);
     cursor: pointer;
 }
 .slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background: hsl(6, 63%, 50%);
     cursor: pointer;
@@ -107,6 +112,9 @@ textarea{
     border-radius: 5px;
     text-align: center;
     color: hsl(221, 14%, 31%);
+    font-family: 'League Spartan';
+    font-size: 15px;
+    font-weight: 700;
 }
 #diff1{
     background-color: hsl(225, 21%, 49%);
@@ -123,6 +131,7 @@ textarea{
     margin: 5px 5px;
     border-style: solid;
     border-radius: 5px;
+    font-family: 'League Spartan';
 }
 #diff2{
     background-color: hsl(225, 21%, 49%);
