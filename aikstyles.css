@@ -31,17 +31,30 @@ main{
 .theme{
     display: flex;
     flex-direction: row;
-    align-self: flex-end;
     max-width: 50%;
 }
 .theme>p {
     margin: 10px;
+    text-align: center;
     color: hsl(0, 0%, 100%);
     font-size: 12px;
 }
+.theme>div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+.theme>div>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -20px;
+    padding: 0 8px;
+    color: hsl(0, 0%, 100%);
+}
 .slider{
     -webkit-appearance: none;
-    width: 100%;
+    width: 85%;
     height: 25px;
     padding: 2px 5px;
     border-radius: 50px;
@@ -87,6 +100,19 @@ textarea{
 .row>button {
     padding: 10px 20px;
     margin: 5px 5px;
+    background-color: hsl(30, 25%, 89%);
+    border-color: hsl(30, 25%, 89%);
+    box-shadow: 2px 2px hsl(28, 16%, 65%);
+    border-style: solid;
+    border-radius: 5px;
+    text-align: center;
+    color: hsl(221, 14%, 31%);
+}
+#diff1{
+    background-color: hsl(225, 21%, 49%);
+    border-color: hsl(225, 21%, 49%);
+    box-shadow: 2px 2px hsl(224, 28%, 35%);
+    color: hsl(0, 0%, 100%);
 }
 .row2{
     display: grid;
@@ -95,6 +121,20 @@ textarea{
 .row2>button {
     padding: 10px 20px;
     margin: 5px 5px;
+    border-style: solid;
+    border-radius: 5px;
+}
+#diff2{
+    background-color: hsl(225, 21%, 49%);
+    border-color: hsl(225, 21%, 49%);
+    box-shadow: 2px 2px hsl(224, 28%, 35%);
+    color: hsl(0, 0%, 100%);
+}
+#diff3{
+    background-color: hsl(6, 63%, 50%);
+    border-color: hsl(6, 63%, 50%);
+    box-shadow: 2px 2px hsl(6, 70%, 34%);
+    color: hsl(0, 0%, 100%);
 }
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }

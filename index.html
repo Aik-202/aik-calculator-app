@@ -17,7 +17,14 @@
         <h1>calc</h1>
         <div class="theme">
           <p>THEME</p>
-          <input type="range" name="themes" id="theme_select" min="0" max="2" class="slider">
+          <div>
+            <div>
+              <label for="theme_select">1</label>
+              <label for="theme_select">2</label>
+              <label for="theme_select">3</label>
+            </div>
+            <input type="range" name="themes" id="theme_select" min="0" max="2" class="slider">
+          </div>
         </div>
       </div>
       <textarea name="result" id="result_value" cols="30" rows="4"></textarea>
@@ -26,7 +33,7 @@
           <button>7</button>
           <button>8</button>
           <button>9</button>
-          <button>DEL</button>
+          <button id="diff1">DEL</button>
           <button>4</button>
           <button>5</button>
           <button>6</button>
@@ -40,8 +47,8 @@
           <button>/</button>
           <button>x</button>
           <div class="row2">
-            <button>RESET</button>
-            <button>=</button>
+            <button id="diff2">RESET</button>
+            <button id="diff3">=</button>
           </div>
         </div>
       </div>
