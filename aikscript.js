@@ -3,6 +3,7 @@ const display = $("#process");
 const slider = $(".slider")
 display.val('') 
 
+
 for(let i = 0; i < buttons.length; i++){
     buttons[i].addEventListener("click", () => {
         if(buttons[i].innerHTML == "DEL"){
@@ -19,9 +20,34 @@ for(let i = 0; i < buttons.length; i++){
     });
 }
 
-slider.change(() => {
-    if(slider.val() == 1){
-        $(".theme1").removeClass("theme1 theme3")
-        $(".theme1").addClass("theme2");
+slider.change(themeChange = () => {
+    var theme;
+    if(slider.val() == 0){
+        $("body").removeClass("theme2 theme3");
+        $("body").addClass("theme1");
+        theme = "theme1";
     }
-})
+    if(slider.val() == 1){
+        $("body").removeClass("theme1 theme3");
+        $("body").addClass("theme2");
+        theme = "theme2";
+    }
+    if(slider.val() == 2){
+        $("body").removeClass("theme1 theme2");
+        $("body").addClass("theme3");
+        theme = "theme3";
+    }
+    localStorage.setItem("pageTheme", JSON.stringify(theme));
+});
+
+$(document).ready(() => {
+    let getTheme = JSON.parse(localStorage.getItem("pageTheme"));
+    if(getTheme == "theme1"){
+        slider.val('0');
+    }else if (getTheme == "theme2"){
+        slider.val('1');
+    } else{
+        slider.val('2');
+    }
+    themeChange();
+});
