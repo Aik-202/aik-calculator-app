@@ -1,5 +1,6 @@
 const buttons = $("div button");
 const display = $("#process");
+const output = $("#output");
 const slider = $(".slider")
 var number
 var number2;
@@ -14,6 +15,7 @@ for (let i = 0; i < buttons.length; i++) {
             display.val(number.slice(0, -1));
         } else if (buttons[i].innerHTML == "RESET") {
             display.val('');
+            output.parent().removeClass("active");
         } else if (buttons[i].innerHTML == "+" || buttons[i].innerHTML == "-" || buttons[i].innerHTML == "x" || buttons[i].innerHTML == "/") {
             number = +display.val();
             display.val(display.val() + ' ' + buttons[i].innerHTML + ' ');
@@ -27,7 +29,7 @@ for (let i = 0; i < buttons.length; i++) {
                 pos = display.val().indexOf("/") + 1;
             }
         } else if(buttons[i].innerHTML == "=") {
-            //code here
+            finalAnswer();
         } else {
             display.val(display.val() + buttons[i].innerHTML);
             var str2;
@@ -51,7 +53,15 @@ const operatorDetector = (pos, number, number2, str) => {
     } else {
         result = number / number2;
     }
-    console.log(result)
+    if(Number.isFinite(result)){
+        finalAnswer(result);
+    }
+}
+
+const finalAnswer = (result) => {
+    // output.css("display", "block")
+    output.parent().addClass("active");
+    output.val(result);
 }
 
 slider.change(themeChange = () => {
