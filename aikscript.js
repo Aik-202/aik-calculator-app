@@ -1,38 +1,54 @@
 const buttons = $("div button");
 const display = $("#process");
 const slider = $(".slider")
-display.val('') 
+var number
+var number2;
+var pos;
+display.val('')
 
 
-for(let i = 0; i < buttons.length; i++){
+for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", () => {
-        if(buttons[i].innerHTML == "DEL"){
+        if (buttons[i].innerHTML == "DEL") {
             let number = display.val();
             display.val(number.slice(0, -1));
-        }else if(buttons[i].innerHTML == "RESET"){
+        } else if (buttons[i].innerHTML == "RESET") {
             display.val('');
-        }else if (buttons[i].innerHTML == "+" || buttons[i].innerHTML == "-" || buttons[i].innerHTML == "x" || buttons[i].innerHTML == "/"  ){
+        } else if (buttons[i].innerHTML == "+" || buttons[i].innerHTML == "-" || buttons[i].innerHTML == "x" || buttons[i].innerHTML == "/") {
+            number = +display.val();
             display.val(display.val() + ' ' + buttons[i].innerHTML + ' ');
-            // if(buttons[i].innerHTML == "+") {} else if(buttons[i].innerHTML == "-") {} else if(buttons[i].innerHTML == "x") {} else {}
-        }else{
+            if (buttons[i].innerHTML == "+") {
+                pos = display.val().indexOf("+") + 1;
+            } else if (buttons[i].innerHTML == "-") {
+                pos = display.val().indexOf("-") + 1;
+            } else if (buttons[i].innerHTML == "x") {
+                pos = display.val().indexOf("x") + 1;
+            } else {
+                pos = display.val().indexOf("/") + 1;
+            }
+        } else {
             display.val(display.val() + buttons[i].innerHTML);
+            var str2;
+            str2 = display.val().slice(pos);
+            number2 = +str2
+            console.log(`${number}, ${number2}`);
         }
     });
 }
 
 slider.change(themeChange = () => {
     var theme;
-    if(slider.val() == 0){
+    if (slider.val() == 0) {
         $("body").removeClass("theme2 theme3");
         $("body").addClass("theme1");
         theme = "theme1";
     }
-    if(slider.val() == 1){
+    if (slider.val() == 1) {
         $("body").removeClass("theme1 theme3");
         $("body").addClass("theme2");
         theme = "theme2";
     }
-    if(slider.val() == 2){
+    if (slider.val() == 2) {
         $("body").removeClass("theme1 theme2");
         $("body").addClass("theme3");
         theme = "theme3";
@@ -42,11 +58,11 @@ slider.change(themeChange = () => {
 
 $(document).ready(() => {
     let getTheme = JSON.parse(localStorage.getItem("pageTheme"));
-    if(getTheme == "theme1"){
+    if (getTheme == "theme1") {
         slider.val('0');
-    }else if (getTheme == "theme2"){
+    } else if (getTheme == "theme2") {
         slider.val('1');
-    } else{
+    } else {
         slider.val('2');
     }
     themeChange();
