@@ -26,14 +26,32 @@ for (let i = 0; i < buttons.length; i++) {
             } else {
                 pos = display.val().indexOf("/") + 1;
             }
+        } else if(buttons[i].innerHTML == "=") {
+            //code here
         } else {
             display.val(display.val() + buttons[i].innerHTML);
             var str2;
             str2 = display.val().slice(pos);
             number2 = +str2
-            console.log(`${number}, ${number2}`);
+            // console.log(`${number}, ${number2}`);
+            operatorDetector(pos, number, number2, display.val());
         }
     });
+}
+
+const operatorDetector = (pos, number, number2, str) => {
+    const operator = str.charAt(pos-1);
+    var result;
+    if(operator == "+"){
+        result = number + number2;
+    } else if(operator == "-"){
+        result = number - number2;
+    } else if(operator == "x"){
+        result = number * number2;
+    } else {
+        result = number / number2;
+    }
+    console.log(result)
 }
 
 slider.change(themeChange = () => {
