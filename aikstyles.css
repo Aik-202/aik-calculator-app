@@ -1,52 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
-body{
+
+body {
     box-sizing: border-box;
     margin: 0;
 }
-h1,p{
+
+h1,
+p {
     margin: 0;
     padding: 0;
     color: hsl(0, 0%, 100%);
     font-family: 'League Spartan';
 }
-main{
+
+main {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: hsl(222, 26%, 31%);
     height: 100vh;
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.cont1{
+
+.cont1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.cont1>h1{
+
+.cont1>h1 {
     color: hsl(0, 0%, 100%);
     font-size: 25px;
 }
-.theme{
+
+.theme {
     display: flex;
     flex-direction: row;
     max-width: 45%;
 }
+
 .theme>p {
     margin: 10px;
     text-align: center;
     color: hsl(0, 0%, 100%);
     font-size: 12px;
 }
-.theme>div{
+
+.theme>div {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
 }
-.theme>div>div{
+
+.theme>div>div {
     display: flex;
     flex-direction: row;
     width: 80%;
@@ -57,7 +68,8 @@ main{
     font-family: 'League Spartan';
     font-size: 12px;
 }
-.slider{
+
+.slider {
     -webkit-appearance: none;
     width: 80%;
     height: 18px;
@@ -66,6 +78,7 @@ main{
     outline: none;
     background: hsl(223, 31%, 20%);
 }
+
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -76,6 +89,7 @@ main{
     cursor: pointer;
     transition: background-color 2s;
 }
+
 .slider::-moz-range-thumb {
     width: 15px;
     height: 15px;
@@ -92,12 +106,14 @@ main{
 .slider::-moz-range-thumb:hover {
     background: hsl(6, 63%, 60%);
 }
+
 .result {
     display: flex;
     flex-direction: column;
     margin: 10px 0;
 }
-.result>input{
+
+.result>input {
     resize: none;
     cursor: none;
     pointer-events: none;
@@ -130,17 +146,19 @@ main{
     padding: 20px 10px 5px 0px;
 }
 
-.cont2{
+.cont2 {
     display: flex;
     flex-direction: column;
     background-color: hsl(223, 31%, 20%);
     border-radius: 5px;
     padding: 10px;
 }
-.row{
+
+.row {
     display: grid;
     grid-template-columns: 70px 70px 70px 70px;
 }
+
 .row>button {
     padding: 5px 5px;
     margin: 5px 5px;
@@ -157,11 +175,13 @@ main{
     cursor: pointer;
     transition: background-color 2s border-color 2s;
 }
+
 .row>button:hover {
     background-color: hsl(30, 25%, 99%);
     border-color: hsl(30, 25%, 99%);
 }
-#diff1{
+
+#diff1 {
     padding: 10px 10px;
     margin: 5px 5px;
     font-size: 15px;
@@ -172,14 +192,17 @@ main{
     text-align: center;
     transition: background-color 2s border-color 2s;
 }
+
 #diff1:hover {
     background-color: hsl(225, 21%, 59%);
     border-color: hsl(225, 21%, 59%);
 }
-.row2{
+
+.row2 {
     display: grid;
     grid-template-columns: 140px 140px;
 }
+
 .row2>button {
     padding: 10px 20px;
     margin: 5px 5px;
@@ -190,27 +213,130 @@ main{
     font-weight: 700;
     cursor: pointer;
 }
-#diff2{
+
+#diff2 {
     background-color: hsl(225, 21%, 49%);
     border-color: hsl(225, 21%, 49%);
     box-shadow: 0px 2px hsl(224, 28%, 35%);
     color: hsl(0, 0%, 100%);
     transition: background-color 2s border-color 2s;
 }
-#diff3{
+
+#diff3 {
     background-color: hsl(6, 63%, 50%);
     border-color: hsl(6, 63%, 50%);
     box-shadow: 0px 2px hsl(6, 70%, 34%);
     color: hsl(0, 0%, 100%);
     transition: background-color 2s border-color 2s;
 }
+
 #diff2:hover {
     background-color: hsl(225, 21%, 59%);
     border-color: hsl(225, 21%, 59%);
 }
+
 #diff3:hover {
     background-color: hsl(6, 63%, 60%);
     border-color: hsl(6, 63%, 60%);
 }
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+
+.theme2 main {
+    background-color: hsl(0, 0%, 90%);
+}
+
+.theme2 h1,
+p {
+    color: hsl(60, 10%, 19%);
+}
+
+.theme2 .theme>p {
+    color: hsl(60, 10%, 19%);
+}
+
+.theme2 .theme>div>div {
+    color: hsl(60, 10%, 19%);
+}
+
+.theme2 .slider {
+    background: hsl(0, 5%, 81%);
+}
+
+.theme2 .slider::-webkit-slider-thumb {
+    background: hsl(25, 98%, 40%);
+}
+
+.theme2 .slider::-moz-range-thumb {
+    background: hsl(25, 98%, 40%);
+}
+
+.theme2 .slider::-webkit-slider-thumb:hover {
+    background: hsl(25, 98%, 50%);
+}
+
+.theme2 .slider::-moz-range-thumb:hover {
+    background: hsl(25, 98%, 50%);
+}
+
+.theme2 .result>input {
+    color: hsl(60, 10%, 19%);
+    background-color: hsl(0, 0%, 93%);
+    border-color: hsl(0, 0%, 93%);
+}
+
+.theme2 .cont2 {
+    background-color: hsl(0, 5%, 81%);
+}
+
+.theme2 .row>button {
+    color: hsl(60, 10%, 19%);
+    background-color: hsl(45, 7%, 89%);
+    border-color: hsl(45, 7%, 89%);
+    box-shadow: 0px 2px hsl(35, 11%, 61%);
+}
+
+.theme2 .row>button:hover {
+    background-color: hsl(45, 7%, 99%);
+    border-color: hsl(45, 7%, 99%);
+}
+
+.theme2 #diff1 {
+    background-color: hsl(185, 42%, 37%);
+    border-color: hsl(185, 42%, 37%);
+    box-shadow: 0px 2px hsl(185, 58%, 25%);
+}
+
+.theme2 #diff1:hover {
+    background-color: hsl(185, 42%, 47%);
+    border-color: hsl(185, 42%, 47%);
+}
+
+.theme2 #diff2 {
+    background-color: hsl(185, 42%, 37%);
+    border-color: hsl(185, 42%, 37%);
+    box-shadow: 0px 2px hsl(185, 58%, 25%);
+}
+
+.theme2 #diff2:hover {
+    background-color: hsl(185, 42%, 47%);
+    border-color: hsl(185, 42%, 47%);
+}
+
+.theme2 #diff3 {
+    background-color: hsl(25, 98%, 40%);
+    border-color: hsl(25, 98%, 40%);
+    box-shadow: 0px 2px hsl(25, 99%, 27%);
+}
+
+.theme2 #diff3:hover {
+    background-color: hsl(25, 98%, 50%);
+    border-color: hsl(25, 98%, 50%);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

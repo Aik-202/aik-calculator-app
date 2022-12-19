@@ -1,5 +1,6 @@
 const buttons = $("div button");
 const display = $("#process");
+const slider = $(".slider")
 display.val('') 
 
 for(let i = 0; i < buttons.length; i++){
@@ -17,3 +18,10 @@ for(let i = 0; i < buttons.length; i++){
         }
     });
 }
+
+slider.change(() => {
+    if(slider.val() == 1){
+        $(".theme1").removeClass("theme1 theme3")
+        $(".theme1").addClass("theme2");
+    }
+})
