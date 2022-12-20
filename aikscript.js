@@ -2,16 +2,18 @@ const buttons = $("div button");
 const display = $("#process");
 const output = $("#output");
 const slider = $(".slider")
-var number
+var number;
 var number2;
 var pos;
+var result;
+var str2;
 display.val('')
 
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", () => {
         if (buttons[i].innerHTML == "DEL") {
-            let number = display.val();
+            number = display.val();
             display.val(number.slice(0, -1));
         } else if (buttons[i].innerHTML == "RESET") {
             display.val('');
@@ -29,21 +31,23 @@ for (let i = 0; i < buttons.length; i++) {
                 pos = display.val().indexOf("/") + 1;
             }
         } else if(buttons[i].innerHTML == "=") {
-            finalAnswer();
+            output.parent().removeClass("active");
+            display.val(result);
         } else {
             display.val(display.val() + buttons[i].innerHTML);
-            var str2;
             str2 = display.val().slice(pos);
-            number2 = +str2
-            // console.log(`${number}, ${number2}`);
+            number2 = +str2;
+            if(Number.isFinite(result)){
+                number = result;
+            }
             operatorDetector(pos, number, number2, display.val());
+            console.log(`${number}, ${number2}`);
         }
     });
 }
 
 const operatorDetector = (pos, number, number2, str) => {
     const operator = str.charAt(pos-1);
-    var result;
     if(operator == "+"){
         result = number + number2;
     } else if(operator == "-"){
